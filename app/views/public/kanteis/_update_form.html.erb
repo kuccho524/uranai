@@ -1,0 +1,52 @@
+<%= form_with model: kantei, url: kantei_path, local:true do |f| %>
+  <table>
+    <tr>
+      <div class="form-group">
+        <th><label class="control-label col-xs-2">名前（姓名）</label></th>
+        <td><%= f.text_field :last_name, autofocus: true, placeholder: "姓", class: "form-control" %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= f.text_field :first_name, autofocus: true, placeholder: "名", class: "form-control"%></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-group">
+        <th><label class="control-label col-xs-2">フリガナ</label></th>
+        <td><%= f.text_field :last_name_kana, placeholder: "セイ", autofocus: true, class: "form-control"  %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= f.text_field :first_name_kana, placeholder: "メイ", autofocus: true, class: "form-control" %></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form_group">
+        <th><label class="control-label col-xs-3">鑑定希望日時</label></th>
+        <td>
+          <%= f.select :year, [*2021..2051], class: "form-control" %> 年
+          <%= f.select :month, [*1..12], class: "form-control" %> 月
+          <%= f.select :day, [*1..31], class: "form-control"%> 日
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form_group">
+        <th><label class="control-label col-xs-3">希望鑑定コース</label></th>
+        <td>
+          <%= f.radio_button :course, :Aコース, checked: true %><%= f.label :Aコース %>
+          <%= f.radio_button :course, :Bコース %><%= f.label :Bコース %>
+          <%= f.radio_button :course, :Cコース %><%= f.label :Cコース %>
+        </td>
+      </div>
+    </tr>
+  </table>
+  <div class="form_group">
+    <strong><%= f.label :その他お問い合わせなど %></strong>
+    <%= f.text_area :inquiry, class: "form-control inquiry", size: "90x5" %>
+  </div>
+  <div class="form_group" style="margin-top: 20px;">
+    <%= f.submit '鑑定を依頼する', class: "btn btn-success pull-right" %>
+<% end %>
+    <%= link_to '鑑定依頼を削除する', kantei_path, method: :delete, class: "btn btn-danger pull-right" %>
+  </div>

@@ -1,0 +1,2 @@
+module KanteisHelper
+end

@@ -10,6 +10,7 @@
           <tr>
             <div class="form-group">
               <th><label class="control-label col-xs-2">名前</label></th>
+              <td></td>
               <td>（姓）</td>
               <td><%= f.text_field :last_name, autofocus: true, placeholder: "姓", class: "form-control" %></td>
               <td>（名）</td>
@@ -68,7 +69,6 @@
           </tr>
         </table>
       <% end %>
-      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>

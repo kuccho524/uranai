@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'homes#top'
     resources :members, except: [:new, :create, :destroy]
-    resources :uranais, except: [:index, :new, :create]
+    resources :kanteis, except: [:index, :new, :create]
   end
   devise_for :admins
 
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     resource :members, only: [:show, :edit, :update]
-    resources :uranais
+    resources :kanteis
   end
 
   devise_for :members, controllers: {

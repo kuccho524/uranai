@@ -1,6 +1,7 @@
 class Public::MembersController < ApplicationController
+  before_action :authenticate_member!
 
-  # 会員側のコントローラー
+  # 会員のコントローラー
   def show
   end
 
