@@ -1,32 +1,31 @@
-<!-- 会員情報 -->
 <table class="table table-bordered mb-3">
   <tbody>
     <tr>
       <td class="bg-light w-25">氏名</td>
       <td>
-        <%= current_member.last_name %>
-        <%= current_member.first_name %>
+        <%= @member.last_name %>
+        <%= @member.first_name %>
       </td>
     </tr>
     <tr>
       <td class="bg-light">カナ</td>
       <td>
-        <%= current_member.last_name_kana %>
-        <%= current_member.first_name_kana %>
+        <%= @member.last_name_kana %>
+        <%= @member.first_name_kana %>
       </td>
     </tr>
     <tr>
       <td class="bg-light text-nowrap">メールアドレス</td>
       <td>
-        <%= current_member.email %>
+        <%= @member.email %>
       </td>
     </tr>
     <tr>
       <td class="bg-light">生年月日</td>
       <td>
-        <%= current_member.year %> 年
-        <%= current_member.month %> 月
-        <%= current_member.day %> 日
+        <%= @member.year %> 年
+        <%= @member.month %> 月
+        <%= @member.day %> 日
       </td>
     </tr>
   </tbody>

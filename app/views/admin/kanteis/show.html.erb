@@ -1,2 +1,41 @@
-<h1>Admin::Kanteis#show</h1>
-<p>Find me in app/views/admin/kanteis/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 mx-auto">
+      <h2>鑑定依頼詳細</h2>
+
+      <!-- 鑑定依頼内容を表示 -->
+      <table class="table table-bordered text-center" style="margin-top: 30px;">
+       <tbody>
+         <tr>
+            <th>鑑定希望者</th>
+            <td><%= @kantei.last_name %>　<%= @kantei.first_name %></td>
+          </tr>
+          <tr>
+            <th>鑑定希望日時</th>
+            <td><%= @kantei.year %> 年 <%= @kantei.month %> 月 <%= @kantei.day %> 日</td>
+          </tr>
+          <tr>
+            <th>占いコース</th>
+            <td><%= @kantei.course %></td>
+          </tr>
+          <tr>
+            <th>その他お問い合わせなど</th>
+            <td><%= @kantei.inquiry %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 各画面へのリンク -->
+  <div class="row">
+    <div class="col-sm-4 mx-auto">
+      <table>
+        <td>
+          <%= link_to '編集画面へ', edit_admin_kantei_path(@kantei.id), class: "btn btn-info" %>　　<%= link_to '鑑定一覧画面へ', admin_root_path, class: "btn btn-secondary" %>
+        </td>
+      </table>
+    </div>
+  </div>
+</div>
+

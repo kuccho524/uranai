@@ -1,5 +1,5 @@
-<!-- 鑑定情報編集フォーム -->
-<%= form_with model: kantei, url: kantei_path, local:true do |f| %>
+<!-- 編集フォーム -->
+<%= form_with model: kantei, url: admin_kantei_path, local:true do |f| %>
   <table>
     <tr>
       <div class="form-group">
@@ -49,5 +49,5 @@
   <div class="form_group" style="margin-top: 20px;">
     <%= f.submit '鑑定を依頼する', class: "btn btn-success pull-right" %>
 <% end %>
-    <%= link_to '鑑定依頼を削除する', kantei_path, method: :delete, class: "btn btn-danger pull-right" %>
+    <%= link_to '鑑定依頼を削除する', admin_kantei_path, method: :delete, class: "btn btn-danger pull-right" %>
   </div>
