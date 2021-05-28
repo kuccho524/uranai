@@ -11,5 +11,8 @@ class Kantei < ApplicationRecord
   validates :year, presence: true
   validates :month, presence: true
   validates :day, presence: true
+  validates :born_year, presence: true
+  validates :born_month, presence: true
+  validates :born_day, presence: true
   validates :inquiry, length: { maximum: 30 }
 end
