@@ -1,9 +1,15 @@
 <!-- 会員ログイン時のヘッダー -->
-<li>
-  <%= link_to ' MyPage', members_path, class: 'fas fa-users nav-link text-white' %>
+<li style="padding: 5px 0; margin-right: 200px; color: #fff;">
+  ようこそ、<%= current_member.last_name %> 様
 </li>
 <li>
-  <%= link_to ' 投稿フォーム', new_kantei_path, class: 'fas fa-share-square nav-link text-white' %>
+  <%= link_to ' MyPage', members_path, class: 'fas fa-user nav-link text-white' %>
+</li>
+<li>
+  <%= link_to ' 鑑定履歴一覧', kanteis_path, class: 'fas fa-list-alt nav-link text-white' %>
+</li>
+<li>
+  <%= link_to ' 新規鑑定依頼', new_kantei_path, class: 'fas fa-share-square nav-link text-white' %>
 </li>
 <li>
   <%= link_to ' ログアウト', destroy_member_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-white' %>
