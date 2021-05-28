@@ -1,4 +1,6 @@
 class Public::UranaisController < ApplicationController
+
+  # 占いのコントローラー
   def show
   end
 

@@ -1,0 +1,22 @@
+<!-- headerリスト -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <%= link_to "占い", root_path, class: "navbar-brand text-white" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav ml-auto">
+          <% if admin_signed_in? %>
+            <%= render 'layouts/admin' %>
+          <% elsif member_signed_in? %>
+            <%= render 'layouts/member' %>
+          <% else %>
+            <%= render 'layouts/none' %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

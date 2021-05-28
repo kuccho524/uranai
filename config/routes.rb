@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
 
   # admin側のルーティング
-  devise_for :admins
   namespace :admin do
     root to: 'homes#top'
-    resources :members, except: [:index, :new, :destroy]
-    resources :uranais, except: [:new]
+    resources :members, except: [:new, :create, :destroy]
+    resources :uranais, except: [:index, :new, :create]
   end
+  devise_for :admins
 
   # 会員側のルーティング
-  devise_for :members
   scope module: :public do
     root to: 'homes#top'
     resource :members, only: [:show, :edit, :update]
     resources :uranais
   end
+
+  devise_for :members, controllers: {
+    sessions: 'members/sessions',
+    paswords: 'members/paswords',
+    registrations: 'members/registrations',
+  }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

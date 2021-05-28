@@ -1,0 +1,63 @@
+<%= form_with model: member, url: member_registration_path, local:true do |f| %>
+  <table>
+    <tr>
+      <div class="form-group">
+        <th><label class="control-label col-xs-2">名前</label></th>
+        <td>（姓）</td>
+        <td><%= f.text_field :last_name, autofocus: true, placeholder: "姓", class: "form-control" %></td>
+        <td>（名）</td>
+        <td><%= f.text_field :first_name, autofocus: true, placeholder: "名", class: "form-control"%></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-group">
+        <th><label class="control-label col-xs-2">フリガナ</label></th>
+        <td>（セイ）</td>
+        <td><%= f.text_field :last_name_kana, placeholder: "セイ", autofocus: true, class: "form-control"  %></td>
+        <td>（メイ）</td>
+        <td><%= f.text_field :first_name_kana, placeholder: "メイ", autofocus: true, class: "form-control" %></td>
+      </div>
+    </tr>
+    <tr>
+     <div class="form-group">
+        <th><label class="control-label col-xs-3">生年月日</label></th>
+        <td></td>
+        <td>
+          <%= f.select :year, [*1920..2021], class: "form-control" %> 年
+          <%= f.select :month, [*1..12], class: "form-control" %> 月
+          <%= f.select :day, [*1..31], class: "form-control"%> 日
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-group">
+        <th><label class="control-label col-xs-2">メールアドレス</label></th>
+        <td></td>
+        <td><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "exmaple@exmaple.com", class: "form-control" %></td>
+        <td></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-group">
+        <th><label class="control-label col-xs-2">パスワード(６文字以上)</label></th>
+        <td></td>
+        <td><%= f.password_field :password, autocomplete: "new-password", class: "form-control" %></td>
+        <td></td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-group">
+        <th><label class="control-label col-xs-2">パスワード(確認用)</label></th>
+        <td></td>
+        <td><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %></td>
+        <td></td>
+      </div>
+    </tr>
+    <tr>
+      <th></th>
+      <td></td>
+      <td><%= f.submit "登録情報を更新する", class: 'btn btn-success'%></td>
+      <td></td>
+    </tr>
+  </table>
+<% end %>
