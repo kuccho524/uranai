@@ -41,12 +41,23 @@
         </td>
       </div>
     </tr>
+    <tr>
+      <div class="from_group">
+        <th><label class="control-label col-xs-3">鑑定ステータス</label></th>
+        <td>
+          <%= f.radio_button :kantei_status, :false %>
+          <%= f.label :kantei_status, "鑑定未完了", value: false, class: "form" %>
+          <%= f.radio_button :kantei_status, :true %>
+          <%= f.label :kantei_status, "鑑定完了", value: true %>
+        </td>
+      </div>
+    </tr>
   </table>
   <div class="form_group">
     <strong><%= f.label :その他お問い合わせなど %></strong>
     <%= f.text_area :inquiry, class: "form-control inquiry", size: "90x5" %>
   </div>
   <div class="form_group" style="margin-top: 20px;">
-    <%= f.submit '鑑定を依頼する', class: "btn btn-success pull-right" %>　|　<%= link_to '鑑定依頼を削除する', admin_kantei_path, method: :delete, data: { confirm: '鑑定依頼情報を取り消しますが、よろしいですか？' }, class: "btn btn-danger pull-right" %>
+    <%= f.submit '鑑定情報を更新する', class: "btn btn-success pull-right" %>　|　<%= link_to '鑑定依頼を削除する', admin_kantei_path, method: :delete, data: { confirm: '鑑定依頼情報を取り消しますが、よろしいですか？' }, class: "btn btn-danger pull-right" %>
   </div>
 <% end %>

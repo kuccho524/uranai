@@ -29,6 +29,6 @@ class Admin::KanteisController < ApplicationController
 
   # ストロングパラメーター
   def kantei_params
-    params.require(:kantei).permit(:member_id, :last_name, :first_name, :last_name_kana, :first_name_kana, :course, :year, :month, :day, :inquiry)
+    params.require(:kantei).permit(:member_id, :last_name, :first_name, :last_name_kana, :first_name_kana, :course, :year, :month, :day, :inquiry, :kantei_status)
   end
 end

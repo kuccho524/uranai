@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_28_130153) do
+ActiveRecord::Schema.define(version: 2021_05_29_115146) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_05_28_130153) do
     t.integer "born_year"
     t.integer "born_month"
     t.integer "born_day"
+    t.boolean "kantei_status", default: false
   end
 
   create_table "members", force: :cascade do |t|

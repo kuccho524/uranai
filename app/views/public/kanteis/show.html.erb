@@ -20,6 +20,14 @@
             <td><%= @kantei.year %> 年 <%= @kantei.month %> 月 <%= @kantei.day %> 日</td>
           </tr>
           <tr>
+            <th>鑑定ステータス</th>
+            <% if @kantei.kantei_status == false %>
+              <td>鑑定未完了</td>
+            <% else %>
+              <td>鑑定完了</td>
+            <% end %>
+          </tr>
+          <tr>
             <th>占いコース</th>
             <td><%= @kantei.course %></td>
           </tr>

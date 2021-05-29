@@ -3,6 +3,7 @@
     <th>投稿日時</th>
     <th>投稿者</th>
     <th>コース</th>
+    <th>鑑定ステータス</th>
   </thead>
   <tbody>
     <% kanteis.each do |kantei| %>
@@ -12,12 +13,13 @@
             <%= kantei.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
           <% end %>
         </td>
-        <td>
-          <%= kantei.member.last_name %>　<%= kantei.member.first_name %>
-        </td>
-        <td>
-          <%= kantei.course %>
-        </td>
+        <td><%= kantei.member.last_name %>　<%= kantei.member.first_name %></td>
+        <td><%= kantei.course %></td>
+        <% if kantei.kantei_status == false %>
+          <td class="unfinished">鑑定未完了</td>
+        <% else %>
+          <td class="finished">完了</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

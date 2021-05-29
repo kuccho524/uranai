@@ -2,7 +2,11 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <strong><%= link_to "運命学", root_path, class: "navbar-brand text-white" %></strong>
+      <% unless admin_signed_in? %>
+        <strong><%= link_to "運命学", root_path, class: "navbar-brand text-white" %></strong>
+      <% else %>
+        <strong><%= link_to "運命学", admin_root_path, class: "navbar-brand text-white" %></strong>
+      <% end %>
       <% if member_signed_in? %>
         <p class="navbar-brand text-white" style="margin: 5px 0; margin-left: 50px;">ようこそ、<%= current_member.last_name %> 様</p>
       <% end %>
