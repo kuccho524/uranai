@@ -1,4 +1,4 @@
-<!-- 鑑定情報編集フォーム -->
+<!-- 鑑定情報依頼編集フォーム -->
 <%= form_with model: kantei, url: kantei_path, local:true do |f| %>
   <table>
     <tr>
@@ -19,6 +19,16 @@
         <td></td>
         <td></td>
         <td><%= f.text_field :first_name_kana, placeholder: "メイ", autofocus: true, class: "form-control" %></td>
+      </div>
+    </tr>
+    <tr>
+     <div class="form-group">
+        <th><label class="control-label col-xs-3">生年月日</label></th>
+        <td>
+          <%= f.select :born_year, [*1920..2021], class: "form-control" %> 年
+          <%= f.select :born_month, [*1..12], class: "form-control" %> 月
+          <%= f.select :born_day, [*1..31], class: "form-control"%> 日
+        </td>
       </div>
     </tr>
     <tr>
@@ -47,7 +57,6 @@
     <%= f.text_area :inquiry, class: "form-control inquiry", size: "90x5" %>
   </div>
   <div class="form_group" style="margin-top: 20px;">
-    <%= f.submit '鑑定を依頼する', class: "btn btn-success pull-right" %>
-<% end %>
-    <%= link_to '鑑定依頼を削除する', kantei_path, method: :delete, class: "btn btn-danger pull-right" %>
+    <%= f.submit '鑑定を依頼する', class: "btn btn-success pull-right" %>　|　<%= link_to '鑑定依頼を削除する', kantei_path, method: :delete, data: { confirm: '鑑定依頼を取り消しますが、よろしいですか？' }, class: "btn btn-danger pull-right" %>
   </div>
+<% end %>

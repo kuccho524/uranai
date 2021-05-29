@@ -47,7 +47,6 @@
     <%= f.text_area :inquiry, class: "form-control inquiry", size: "90x5" %>
   </div>
   <div class="form_group" style="margin-top: 20px;">
-    <%= f.submit '鑑定を依頼する', class: "btn btn-success pull-right" %>
-<% end %>
-    <%= link_to '鑑定依頼を削除する', admin_kantei_path, method: :delete, class: "btn btn-danger pull-right" %>
+    <%= f.submit '鑑定を依頼する', class: "btn btn-success pull-right" %>　|　<%= link_to '鑑定依頼を削除する', admin_kantei_path, method: :delete, data: { confirm: '鑑定依頼情報を取り消しますが、よろしいですか？' }, class: "btn btn-danger pull-right" %>
   </div>
+<% end %>

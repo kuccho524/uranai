@@ -11,12 +11,12 @@
             <td><%= @kantei.last_name %>　<%= @kantei.first_name %></td>
           </tr>
           <tr>
-            <th>鑑定希望日時</th>
-            <td><%= @kantei.year %> 年 <%= @kantei.month %> 月 <%= @kantei.day %> 日</td>
-          </tr>
-          <tr>
             <th>生年月日</th>
             <td><%= @kantei.born_year %> 年 <%= @kantei.born_month %> 月 <%= @kantei.born_day %> 日</td>
+          </tr>
+          <tr>
+            <th>鑑定希望日時</th>
+            <td><%= @kantei.year %> 年 <%= @kantei.month %> 月 <%= @kantei.day %> 日</td>
           </tr>
           <tr>
             <th>占いコース</th>
@@ -33,7 +33,7 @@
 
   <!-- 各画面へのリンク -->
   <div class="row">
-    <div class="col-sm-4 mx-auto">
+    <div class="col-sm-4 mx-auto" style="margin: 30px 0;">
       <table>
         <td>
           <%= link_to '編集画面へ', edit_admin_kantei_path(@kantei.id), class: "btn btn-info" %>　　<%= link_to '鑑定一覧画面へ', admin_root_path, class: "btn btn-secondary" %>
